@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | AI-Solution</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <!-- ================= Navbar ================= -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">AI-Solution</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-underline-animation">
+          <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="services.html">Solutions and Services</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="pastsolutions.html">Past Solutions</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="articles.html">Articles and Events</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="adminlogin.html">Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= Hero ================= -->
+  <section class="hero-section">
+    <div class="bubble-bg">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Contact Us</h1>
+      <p class="hero-subtitle">Get started right away by contacting us or apply for a position in AI Solutions!</p>
+      <a href="index.html" class="btn btn-hero">Back to Home</a>
+    </div>
+  </section>
+
+  <!-- ================= Forms ================= -->
+  <section class="forms-section">
+    <div class="container">
+
+  <!-- Toggle Buttons -->
+<div class="toggle-buttons hero-buttons mb-5">
+  <button id="contactBtn" class="btn toggle-hero">Contact Us</button>
+  <button id="jobBtn" class="btn toggle-hero">Employee Sign Up</button>
+</div>
+
+<!-- Contact Form -->
+<div id="contactForm" class="form-wrapper active">
+  <div class="glass-card">
+    <h3 class="text-center mb-4">Contact Us</h3>
+
+    <form id="contactUsForm">
+
+      <input
+        id="contactName"
+        class="form-control mb-3"
+        placeholder="Full Name"
+        required
+      >
+
+      <input
+        id="contactAge"
+        type="number"
+        class="form-control mb-3"
+        placeholder="Age"
+        min="10"
+        required
+      >
+
+      <input
+        id="contactEmail"
+        type="email"
+        class="form-control mb-3"
+        placeholder="Email Address"
+        required
+      >
+
+      <select
+        id="contactService"
+        class="form-control mb-3"
+        required
+      >
+        <option value="" disabled selected>Select AI Service</option>
+        <option value="AI Consulting">AI Consulting</option>
+        <option value="Custom AI Software">Custom AI Software</option>
+        <option value="Cloud AI Solutions">Cloud AI Solutions</option>
+        <option value="Data Analytics & AI">Data Analytics & AI</option>
+        <option value="Robotics & Automation">Robotics & Automation</option>
+        <option value="AI Security Solutions">AI Security Solutions</option>
+
+      </select>
+
+      <textarea
+        id="contactMessage"
+        class="form-control mb-3"
+        rows="4"
+        placeholder="Message"
+        required
+      ></textarea>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-outline">
+          Send Message
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+
+      <!-- Job Form -->
+<div id="jobFormWrapper" class="form-wrapper">
+  <div class="glass-card">
+    <h3 class="text-center mb-4">Employee Sign Up</h3>
+    <form id="jobForm">
+      
+      <input id="jobName" class="form-control mb-3" placeholder="Full Name" required>
+      
+      <input
+        id="jobAge"
+        type="number"
+        class="form-control mb-3"
+        placeholder="Age"
+        min="10"
+        required
+      >
+      
+      <input id="jobEmail" type="email" class="form-control mb-3" placeholder="Email Address" required>
+
+      <select id="jobPosition" class="form-control mb-3" required>
+        <option value="" disabled selected>Select Position</option>
+        <option value="Junior Developer">Junior Developer</option>
+        <option value="Data Scientist">Data Scientist</option>
+        <option value="Robotics Engineer">Robotics Engineer</option>
+        <option value="Cloud Engineer">Cloud Engineer</option>
+        <option value="AI Software Developer">AI Software Developer</option>
+        <option value="UI/UX Designer">UI/UX Designer</option>
+        <option value="DevOps Engineer">DevOps Engineer</option>
+      </select>
+      
+      <textarea
+        id="jobDescription"
+        class="form-control mb-3"
+        rows="3"
+        placeholder="Brief description of your experience"
+        required
+      ></textarea>
+
+      <input
+        id="jobCVLink"
+        type="url"
+        class="form-control mb-3"
+        placeholder="CV Link (Google Drive / Dropbox)"
+        required
+      >
+
+      <div class="text-center mb-2">
+        <button type="submit" class="btn btn-outline">Apply Now</button>
+      </div>
+
+      <div class="progress" style="height: 20px; display:none;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%">0%</div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+  <!-- ================= Toast ================= -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 2000;">
+    <div id="formToast" class="toast align-items-center text-primary bg-white border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000" data-bs-autohide="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMessage">Submission successful!</div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" style="filter: invert(29%) sepia(95%) saturate(7501%) hue-rotate(196deg) brightness(96%) contrast(101%);"></button>
+      </div>
+    </div>
+  </div>
+  <!-- ================= Why Choose Us Section ================= -->
+
+  <section class="container my-5">
+  <h2 class="text-center fw-bold mb-4">Why Choose Us</h2>
+
+  <div class="row g-4 text-center">
+
+    <div class="col-md-4">
+      <h4>🚀 Cutting-Edge Tech</h4>
+      <p>We use the latest AI frameworks and cloud technologies.</p>
+    </div>
+
+    <div class="col-md-4">
+      <h4>🔒 Secure & Reliable</h4>
+      <p>Security and data privacy are built into every solution.</p>
+    </div>
+
+    <div class="col-md-4">
+      <h4>🤝 Long-Term Support</h4>
+      <p>We provide ongoing support and optimization.</p>
+    </div>
+
+    </main>
+
+
+<!-- ================= Footer ================= -->
+ 
+<footer class="bg-dark text-white py-10">
+
+  <div class="text-center">
+    © 2025 AI-Solution. All rights reserved.
+  </div>
+</footer>
+
+
+  
+
+  <!-- ================= Scripts ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBSeO7_N1QgZr1bzSPiXiouppMWoE56gPc",
+      authDomain: "ai-solutions-334e3.firebaseapp.com",
+      projectId: "ai-solutions-334e3",
+      storageBucket: "ai-solutions-334e3.appspot.com",
+      messagingSenderId: "203871450416",
+      appId: "1:203871450416:web:838296e741d6a7265704f5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
+
+    // Toggle buttons
+    const contactBtn = document.getElementById("contactBtn");
+    const jobBtn = document.getElementById("jobBtn");
+    const contactForm = document.getElementById("contactForm");
+    const jobFormWrapper = document.getElementById("jobFormWrapper");
+    const buttons = [contactBtn, jobBtn];
+
+    function setActiveButton(activeBtn) {
+      buttons.forEach(btn => {
+        btn.classList.toggle("btn-hero", btn === activeBtn);
+        btn.classList.toggle("btn-hero-outline", btn !== activeBtn);
+      });
+    }
+
+    contactBtn.onclick = () => {
+      contactForm.classList.add("active");
+      jobFormWrapper.classList.remove("active");
+      setActiveButton(contactBtn);
+    };
+    jobBtn.onclick = () => {
+      jobFormWrapper.classList.add("active");
+      contactForm.classList.remove("active");
+      setActiveButton(jobBtn);
+    };
+    setActiveButton(contactBtn);
+
+    // Toast
+    const toastEl = document.getElementById("formToast");
+    const toastMessageEl = document.getElementById("toastMessage");
+    const bsToast = new bootstrap.Toast(toastEl);
+    function showToast(msg) { toastMessageEl.textContent = msg; bsToast.show(); }
+
+    // Contact Form
+    document.getElementById("contactUsForm").addEventListener("submit", async e => {
+      e.preventDefault();
+      try {
+        await addDoc(collection(db, "contact_inquiries"), {
+  name: document.getElementById("contactName").value,
+  age: Number(document.getElementById("contactAge").value),
+  email: document.getElementById("contactEmail").value,
+  service: document.getElementById("contactService").value,
+  message: document.getElementById("contactMessage").value,
+  createdAt: serverTimestamp()
+});
+
+        showToast("Message sent!");
+        e.target.reset();
+      } catch(err) {
+        console.error(err);
+        showToast("Failed to send message.");
+      }
+    });
+
+// Employee Sign-Up Form
+document.getElementById("jobForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const submitBtn = e.target.querySelector("button");
+
+  const name = document.getElementById("jobName").value.trim();
+  const age = Number(document.getElementById("jobAge").value);
+  const email = document.getElementById("jobEmail").value.trim();
+  const position = document.getElementById("jobPosition").value;
+  const jobDescription = document.getElementById("jobDescription").value.trim();
+  const cvLink = document.getElementById("jobCVLink").value.trim();
+
+  // Validation
+  if (!name || !age || !email || !position || !jobDescription || !cvLink) {
+    showToast("Please fill all fields");
+    return;
+  }
+
+  try {
+    new URL(cvLink); // Validate CV link
+  } catch {
+    showToast("Please enter a valid CV link");
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
+
+  try {
+    await addDoc(collection(db, "job_applications"), {
+      name,
+      age,
+      email,
+      position,
+      jobDescription,
+      cvLink,
+      createdAt: serverTimestamp(),
+    });
+
+    showToast("Application submitted successfully!");
+    e.target.reset();
+  } catch (err) {
+    console.error(err);
+    showToast("Submission failed. Try again.");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Apply Now";
+  }
+});
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
