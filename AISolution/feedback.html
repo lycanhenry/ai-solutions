@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Solution</title>
+  
+  <!-- Bootstrap CSS for responsive layout -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Custom CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= Navbar Section ================= -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">AI-Solution</a>
+      <button
+        class="navbar-toggler custom-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-underline-animation">
+          <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="services.html">Solutions and Services</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="pastsolutions.html">Past Solutions</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="articles.html">Articles and Events</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="adminlogin.html">Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+     <!-- ================= Hero ================= -->
+<section class="hero-section">
+  <div class="bubble-bg">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">Expert Feedback and Reviews</h1>
+    <p class="hero-subtitle">See what experts are saying and leave a review!</p>
+    <a href="index.html" class="btn btn-hero">Back to Home</a>
+  </div>
+</section>
+
+ <!-- ================= Expert Reviews Section ================= -->
+<section class="py-5" id="reviews">
+  <div class="container">
+    <h2 class="text-center mb-5">What Experts Say About Us</h2>
+
+    <div class="row g-4">
+      <!-- Existing Reviews -->
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <h5 class="card-title">Bill Gates</h5>
+            <p class="card-text">"AI-Solution's software has transformed Mircrosoft operations in ways I never imagined."</p>
+            <p>⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <h5 class="card-title">Elon Musk</h5>
+            <p class="card-text">"Impressive integration of AI and cloud solutions—truly innovative, that is very useful for SpaceX."</p>
+            <p>⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <h5 class="card-title">Mark Zuckerberg</h5>
+            <p class="card-text">"Highly reliable and scalable AI-driven solutions for Meta and all modern businesses."</p>
+            <p>⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Expert Reviews -->
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <h5 class="card-title">Tony Stark</h5>
+            <p class="card-text">"AI-Solution demonstrates a deep understanding of enterprise AI deployment, helping the Avengers with numerous problems and various threats."</p>
+            <p>⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <h5 class="card-title">Steve Jobs</h5>
+            <p class="card-text">"Their AI and cloud solutions are both innovative and practical for real-world use, supporting Apple in many ways."</p>
+            <p>⭐⭐⭐⭐</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <h5 class="card-title">Stephen Hawkings</h5>
+            <p class="card-text">"AI-Solution’s tools make complex data easy to understand and actionable."</p>
+            <p>⭐⭐⭐⭐</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- ================= Feedback Form ================= -->
+<div class="mt-5 text-center">
+  <h3>Leave Your Feedback</h3>
+  <form id="feedbackForm" class="d-flex flex-column align-items-center gap-3 mt-3">
+    <input type="text" class="form-control w-50" placeholder="Your Name" required>
+    <textarea class="form-control w-50" rows="3" placeholder="Your Feedback" required></textarea>
+    
+    <div class="star-rating">
+  <span class="star" data-value="1">★</span>
+  <span class="star" data-value="2">★</span>
+  <span class="star" data-value="3">★</span>
+  <span class="star" data-value="4">★</span>
+  <span class="star" data-value="5">★</span>
+</div>
+
+
+    <button type="submit" class="btn btn-hero mt-2">Submit Feedback</button>
+  </form>
+</div>
+
+<!-- Toast container -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 2000;">
+  <div id="feedbackToast" class="toast align-items-center text-primary bg-white border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000" data-bs-autohide="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Feedback submitted successfully!
+      </div>
+      <!-- Make the close button blue -->
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" style="filter: invert(29%) sepia(95%) saturate(7501%) hue-rotate(196deg) brightness(96%) contrast(101%);"></button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS for star rating and toast -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const stars = document.querySelectorAll('.star-rating .star');
+let selectedRating = 0;
+
+// Hover & click effect
+stars.forEach((star, index) => {
+  star.addEventListener('mouseover', () => {
+    highlightStars(index + 1);
+  });
+
+  star.addEventListener('mouseout', () => {
+    highlightStars(selectedRating);
+  });
+
+  star.addEventListener('click', () => {
+    selectedRating = index + 1;
+    highlightStars(selectedRating);
+  });
+});
+
+function highlightStars(rating) {
+  stars.forEach((star, i) => {
+    if (i < rating) {
+      star.classList.add('filled');
+      star.classList.remove('hover');
+    } else {
+      star.classList.remove('filled');
+      star.classList.remove('hover');
+    }
+  });
+}
+
+
+  // Feedback submission
+  const feedbackForm = document.getElementById('feedbackForm');
+  const toastEl = document.getElementById('feedbackToast');
+  const toast = new bootstrap.Toast(toastEl);
+
+  feedbackForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Reset form
+    feedbackForm.reset();
+
+    // Reset stars
+    selectedRating = 0;
+    stars.forEach(s => s.classList.remove('filled'));
+
+    // Show toast
+    toast.show();
+  });
+});
+
+</script>
+<section>
+</section>
+
+<!-- ================= Why Choose Us Section ================= -->
+
+  <section class="container my-5">
+  <h2 class="text-center fw-bold mb-4">Why Choose Us</h2>
+
+  <div class="row g-4 text-center">
+
+    <div class="col-md-4">
+      <h4>🚀 Cutting-Edge Tech</h4>
+      <p>We use the latest AI frameworks and cloud technologies.</p>
+    </div>
+
+    <div class="col-md-4">
+      <h4>🔒 Secure & Reliable</h4>
+      <p>Security and data privacy are built into every solution.</p>
+    </div>
+
+    <div class="col-md-4">
+      <h4>🤝 Long-Term Support</h4>
+      <p>We provide ongoing support and optimization.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="text-center py-5  text-white">
+  <h2 class="fw-bold mb-3">Ready to Transform Your Business with AI?</h2>
+  <p class="mb-4">Contact us today to get a custom AI solution.</p>
+  <a href="contact.html" class="btn btn-light btn-lg">Get Started</a>
+</section>
+
+  <!-- ================= Footer ================= -->
+  <footer>
+    <div class="container text-center py-4">
+      © 2025 AI-Solution. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

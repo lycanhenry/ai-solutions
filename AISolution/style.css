@@ -1,0 +1,537 @@
+:root {
+  --royal-blue: #4169E1;
+  --royal-blue-light: #6f8cff;
+  --white: #ffffff;
+  --glass: rgba(255,255,255,0.18);
+  --transition: 0.35s ease;
+}
+
+/* ================= Global ================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--royal-blue);
+  color: var(--white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ================= Navbar ================= */
+.navbar {
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 0.7rem 1rem;
+}
+
+.navbar-brand {
+  color: var(--royal-blue) !important;
+  font-weight: 900;
+  font-size: 1.6rem;
+}
+
+.navbar-nav .nav-link {
+  color: var(--royal-blue) !important;
+  font-weight: 700;
+  margin-left: 0.8rem;
+  position: relative;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--royal-blue-light);
+  transition: width var(--transition);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* ================= Feedback Star Rating ================= */
+
+.star-rating {
+  display: inline-block;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ccc; /* default gray stars */
+  user-select: none;
+}
+
+.star-rating .star {
+  transition: color 0.2s ease;
+}
+
+.star-rating .star.hover,
+.star-rating .star.filled {
+  color: #ffc107; /* gold stars */
+}
+
+.star-rating .star.filled + .star.hover {
+  color: #ffc107; /* keep hover working after selection */
+}
+
+
+
+
+/* ================= Hero Section ================= */
+.hero-section {
+  min-height: 80vh; /* matches article page height feel */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 1000px;
+  z-index: 2;
+}
+
+/* Hero Titles */
+.hero-title {
+  font-weight: 900; /* already extra bold */
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-weight: 900; /* changed from normal to bold */
+  font-size: 1.3rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.tagline {
+  font-weight: 700; /* slightly bolder than before */
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+
+
+/* Hero Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-buttons .btn-hero:first-child {
+  animation: heroPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes heroPulse {
+  0%, 100% { box-shadow: 0 5px 15px rgba(255,255,255,0.4); }
+  50% { box-shadow: 0 8px 30px rgba(255,255,255,0.75); }
+}
+
+
+/* Primary Hero Button (white, lit up) */
+.btn-hero {
+  display: inline-block;
+  min-width: 180px;
+  padding: 0.8rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--white);
+  color: var(--royal-blue);
+  border: 2px solid var(--white);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.4); /* lit-up effect */
+  transition: all var(--transition);
+  font-size: 1.05rem;
+}
+
+.btn-hero:hover {
+  background-color: var(--royal-blue-light);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.5);
+}
+
+/* Outline Hero Button */
+.btn-hero-outline {
+  display: inline-block;
+  min-width: 180px;
+  padding: 0.8rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+  transition: all var(--transition);
+  font-size: 1.05rem;
+}
+
+.btn-hero-outline:hover {
+  background-color: var(--white);
+  color: var(--royal-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.5);
+}
+
+/* Responsive Hero Buttons */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-hero,
+  .btn-hero-outline {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+
+
+
+/* ===== Hero entrance animations ===== */
+.hero-content > * {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: heroFadeUp 0.9s ease forwards;
+}
+
+.hero-title { animation-delay: 0.1s; }
+.hero-subtitle { animation-delay: 0.25s; }
+.tagline { animation-delay: 0.4s; }
+.hero-buttons { animation-delay: 0.6s; }
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content.animate > * {
+  animation-play-state: running;
+}
+
+/* ================= Animated Bubble Background ================= */
+
+.hero-section {
+  overflow: hidden;
+}
+
+.bubble-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.bubble-bg span {
+  position: absolute;
+  bottom: -150px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  animation: bubbleFloat 18s infinite linear;
+  backdrop-filter: blur(4px);
+}
+
+/* Random sizes & positions */
+.bubble-bg span:nth-child(1) {
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 20s;
+}
+
+.bubble-bg span:nth-child(2) {
+  left: 25%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 14s;
+}
+
+.bubble-bg span:nth-child(3) {
+  left: 45%;
+  width: 90px;
+  height: 90px;
+  animation-duration: 22s;
+}
+
+.bubble-bg span:nth-child(4) {
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 16s;
+}
+
+.bubble-bg span:nth-child(5) {
+  left: 80%;
+  width: 70px;
+  height: 70px;
+  animation-duration: 25s;
+}
+
+.bubble-bg span:nth-child(6) {
+  left: 90%;
+  width: 35px;
+  height: 35px;
+  animation-duration: 13s;
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* Keep hero content above bubbles */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+
+/* ================= Toggle Buttons ================= */
+.toggle-btn {
+  opacity: 0.35;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.toggle-btn.active {
+  opacity: 1;
+  background: var(--white);
+  color: var(--royal-blue);
+  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+/* ================= Forms ================= */
+.forms-section {
+  padding: 4rem 0;
+}
+
+.form-wrapper {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.form-wrapper.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= Glass Cards ================= */
+.glass-card {
+  max-width: 600px;
+  margin: auto;
+  background: var(--glass);
+  border-radius: 18px;
+  padding: 2.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.glass-card h3 {
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+/* ================= Form Inputs ================= */
+.form-control {
+  border-radius: 12px;
+  padding: 12px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.form-control::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ================= Cards ================= */
+.card {
+  background: var(--glass);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  color: var(--white);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* ================= Team Profile Pictures ================= */
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255,255,255,0.15);
+  border: 3px solid rgba(255,255,255,0.35);
+  box-shadow: 0 0 20px rgba(255,255,255,0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover effect */
+.team-card:hover .profile-pic {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(255,255,255,0.55);
+}
+
+/* ================= Carousel ================= */
+.card:hover {
+  transform: translateY(-6px);
+  transition: 0.3s ease;
+}
+
+
+.carousel img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+
+
+
+/* ================= Sections ================= */
+section {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= Footer ================= */
+footer {
+  background: #111;
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .hero-title,
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle,
+  .hero p.tagline {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 0.5rem 0;
+  }
+}
+
+/* ================= Enhanced Forms ================= */
+.glass-card {
+  position: relative;
+}
+
+.glass-card h3 {
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs focus glow */
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.15);
+}
+
+/* File input styling */
+input[type="file"] {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Submit buttons */
+.btn-outline {
+  min-width: 180px;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  transition: all var(--transition);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--royal-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.4);
+}
+
+/* ================= Toggle Hero Buttons ================= */
+.toggle-hero {
+  cursor: pointer;
+  border: none;
+}
+
+/* Active state mirrors hero glow */
+.toggle-hero.active {
+  background-color: var(--white);
+  color: var(--royal-blue);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.55);
+}
+
+/* Inactive outlined state */
+.toggle-hero:not(.active) {
+  opacity: 0.85;
+}
+
+/* Smooth switch animation */
+.toggle-buttons {
+  justify-content: center;
+}
